@@ -1,0 +1,4 @@
+LIBRARY SC-PROT_MM
+EXPORTS
+ GiveFnptrsToDll @1
+

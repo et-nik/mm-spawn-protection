@@ -1,0 +1,162 @@
+
+
+	Spawn & Chat Protection Metamod Plugin v2.01!
+		
+	by Jussi Kivilinna <jussi.kivilinna@mbnet.fi>
+		 
+	http://koti.mbnet.fi/axh/
+	
+	[21.3.2007]
+
+
+PLUGIN:
+^^^^^^
+Protects players that have spawned and who are chatting(facing wall) by giving they no-damage-mode. 
+
+
+INSTALLION:
+^^^^^^^^^^
+ 
+1. You need newest Metamod or Adminmod. (www.metamod.org / www.adminmod.org)
+
+2. Extract "sc-prot_mm.dll" to "c:\½life\moddir\dlls"-folder 
+
+3. Add following line to "c:\½life\moddir\metamod.ini":
+
+win32 dlls/sc-prot_mm.dll
+
+If you reinstall Adminmod you have to add these lines again!
+
+
+NOTE:
+^^^^
+Player must face wall to get chat protection.
+
+
+CONFIG:
+^^^^^^
+// Enable/Disable plugin [1/0]
+scp_on 1
+
+// Enable/disable spawnprotection [1/0]
+scp_spawn_on 1
+
+// Enable/Disable chatprotection [1/0]
+scp_chat_on 1
+
+// Enable/Disable say-"chat"-or-"prot"-help [1/0]
+scp_help_on 0
+
+// Enable/Disable whatever player can pickup weapons in protection-mode
+scp_canpickup 1
+
+// How invisible protected players are.. higher value, more visible [0-255]
+scp_transamt 75
+
+// Enable/Disable whatever player can instantly disable protection-mode by pressing fire [1/0]
+scp_off_onfire 1
+
+// How long spawn-protection stays on and also how long chat-protection after moving
+scp_off_delay 0.5
+
+// Centermessage that is send to player when protection has been disabled
+scp_off_msg "Your protection has worn off!"
+
+// Disable/Enable whatever spawn protection stays on until player starts moving
+scp_spawn_stayon 0
+
+// How long time player have to wait for chatprotection
+scp_chat_delay 5
+
+// Disable/Enable chat protection on ladders
+scp_chat_on_ladder 0
+
+// Enable/Disable chat protection in water
+scp_chat_in_water 1
+
+// This is shown to player when chatprotection is activated
+scp_chat_msg "Chat-protection has been enabled for you!"
+
+// This is shown to players when someone says "chat" or "prot" (%.1f is replaced with 'scp_chat_delay')
+scp_chat_help "If you want to get chat protection: face wall and don't move or shoot for %.1fsec."
+
+
+
+HISTORY:
+^^^^^^^
+	v2.01
+	^^^^^
+	 o Disable support for third party bots since SCP doesn't well with metamod bots.
+	 o Doesn't try protect hltv-proxy user anymore.
+
+	v2.00
+	^^^^^
+	 o Rewritten almost completely, cleaned sources, easier to read.
+	 o Only checks for flag carrier on OpFor and TFC mods (reduce CPU usage on other mods).
+	 o New default settings.
+	 o Fixed glowing effects disappearing after gaining and losing chat-protection (glow and other rendermode effects).
+	
+	v1.13
+	^^^^^
+	 o CS round start detection for spawn protection (might work with other mods with rounds as well)
+
+	v1.12
+	^^^^^
+	 o Fixed so that you get damage from trigger_hurts
+
+	v1.11
+	^^^^^
+	 o Protection is now disabled for flag carrier in OpFor-CTF and in TFC
+
+	v1.10
+	^^^^^
+	 o Fixed team change for Half-Life Teamplay and Opposing Force TP/CTF
+	 o Fixed protection activating for spectators in OpFor-CTF
+	
+	v1.02
+	^^^^^
+	 o Chatprotection was activating on spawn.. fixed that.
+	 o Fixed chatprotection-fix of v1.01
+
+	v1.01
+	^^^^^
+	 o Fixed chatprotection when scp_spawn_on is set to zero
+	
+	v1.00
+	^^^^^
+	 o New cvar
+	 	* scp_spawn_stayon -- sets whatever spawn protection stays on until player starts moving
+	 o Default value for 'scp_chat_in_water' changed to '1'
+	
+	v0.90[beta]
+	^^^^^^^^^^^
+	 o New cvars
+	 	* scp_chat_on_ladder -- sets whatever chat protection activates on ladders
+	 	* scp_chat_in_water  -- sets whatever chat protection activates in water
+	 o Changed way plugin detects if player is dead or alive
+	 o Uses helper function from metamod 1.11.00
+	 	* Metamod 1.11.00 or newer needed
+	 o Doesn't log protection-mode changes anymore
+	 o Tweaked HLDM-fix
+	 o Spawn protection now stays on if player doesn't use movement keys
+
+	v0.80[beta]
+	^^^^^^^^^^^
+	 o New features and bug-fixes and bugs ;)
+	 	* scp_canpickup
+	 	* scp_chat_on
+	 	* scp_spawn_on
+	 	* scp_off_onfire
+	 o Comes with Linux binary
+	 o HLDM clientside weapon problem solved!! 
+	 	(this fix should work with other mods with clientside weapons too)
+
+	v0.70[beta]
+	^^^^^^^^^^^	
+	 o Rewritten everything (lost old ugly source.. which is good)
+	 o Renamed to Spawn&Chat-Protection
+
+	v0.40[beta] (Chat-Protection)
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	 o First version (ugly'n'buggy thing which source I destroyed with rm -fr ;) )
+
